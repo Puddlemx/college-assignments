@@ -1,0 +1,5 @@
+print('Введите элементы кортежа:')
+k = tuple([int(input()) for i in range(10)])
+c = tuple([x for x in k if x % 2 == 0])
+print('Исходный кортеж:', k)
+print('Только чётные:', c)

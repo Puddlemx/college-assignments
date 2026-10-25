@@ -1,0 +1,30 @@
+#include <iostream>
+#include <tchar.h>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{system("chcp 1251");
+long long n;
+    int d, e, o;
+	cout << "Введите целое число(не больше 8 разрядов): ";
+    cin >> n;
+	e = 0;
+    o = 0;
+	if (n < 0) {
+        n = -n;
+    }
+	do {
+        d = n % 10;
+
+        if (d % 2 == 0) {
+            e++;
+        } else {
+            o++;
+        }
+
+        n /= 10;
+    } while (n > 0);
+    cout << "Количество чётных цифр: " << e << endl;
+    cout << "Количество нечётных цифр: " << o << endl;
+	system("pause");
+    return 0;
+}

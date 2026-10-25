@@ -1,0 +1,48 @@
+#include <iostream>
+#include <tchar.h>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    system("chcp 1251");
+
+    string s, g, d;
+    int a, b;
+    int f = 0;
+
+    cout << "Введите строку: ";
+    getline(cin, s);
+
+    g = "аеёиоуыэюяАЕЁИОУЫЭЮЯ";
+    a = 0;
+
+    while (a < s.size()) {
+        b = s.find(' ', a);
+        if (b == -1)
+            b = s.size();
+
+        if (b > a && g.find(s[b - 1]) != -1) {
+            d += s.substr(a, b - a) + " ";
+            s.erase(a, b - a + 1);
+            f = 1;
+        }
+        else
+            a = b + 1;
+    }
+
+
+    if (f == 0) {
+        cout << "Нет таких слов" << endl;
+    }
+    else {
+        cout << "Строка после удаления: " << s << endl;
+        cout << "Удалённые слова: " << d << endl;
+    }
+
+    system("pause");
+    return 0;
+}
+

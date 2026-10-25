@@ -1,0 +1,20 @@
+#include <iostream>
+#include <tchar.h>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[]) {
+  system("chcp 1251");
+  int n, c, e, d, s;
+  s = 0;
+  cout << "Введите трёхзначное число n = ";
+  cin >> n;
+
+  e = n / 100;        // Сотни
+  d = (n / 10) % 10;  // Десятки
+  c = n % 10;         // Единицы
+  s = e + d + c;      // Сумма цифр
+
+  cout << "Сумма цифр трехзначного числа s = " << s << endl;
+  system("pause");
+  return 0;
+}

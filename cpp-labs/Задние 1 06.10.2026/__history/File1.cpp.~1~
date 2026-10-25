@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+#include <tchar.h>
+using namespace std;
+  int _tmain(int argc, _TCHAR* argv[])
+ {system ("chcp 1251");
+ long long n,sum,prod;
+     int d;
+	cout << "Введите натуральное число: ";
+	cin >> n;
+   sum = 0;
+   prod = 1;
+	while (n > 0) {
+	    d = n % 10;
+		sum += d;
+		prod *= d;
+        n /= 10;
+    }
+	cout << "Сумма цифр: " << sum<< endl;
+    cout << "Произведение цифр: " << prod<< endl;
+    return 0;
+}

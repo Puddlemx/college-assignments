@@ -1,0 +1,55 @@
+#include <iostream>
+#include <tchar.h>
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[]) {
+
+    int P,sum,c,next,t = 0;
+     sum = 0;
+   current = 1;
+     next = 5;
+   temp = 0;
+
+    // 2. Настройка русского языка для Windows
+    system("chcp 1251 > nul");
+
+    // 3. Ввод числа P
+    cout << "Введите число P: ";
+    cin >> P;
+
+    // 4. Вывод начала строки с рядом чисел
+    cout << "Ряд чисел: ";
+
+    // 5. Простой цикл for, который работает пока сумма меньше или равна P
+    for (; sum <= P; ) {
+        // Выводим текущее число на экран
+        cout << current;
+
+        // Прибавляем текущее число к общей сумме
+        sum = sum + current;
+
+        // Вычисляем следующее число ряда (1, 5, 6, 11...)
+        temp = current + next;
+        current = next;
+        next = temp;
+
+        // Красивое оформление: если условие еще выполняется, ставим плюс
+        if (sum <= P) {
+            cout << " + ";
+        }
+    }
+
+    // 6. Вывод итоговой суммы
+    cout << " = " << sum << endl;
+    cout << "Итоговая сумма s = " << sum << endl;
+
+    // 7. Задержка экрана перед закрытием программы
+    system("pause");
+    return 0;
+}include <iostream>
+#include <tchar.h>
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+
+}

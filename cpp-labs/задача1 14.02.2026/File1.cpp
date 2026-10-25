@@ -1,0 +1,36 @@
+#include <iostream>
+#include <tchar.h>
+using namespace std;
+long long Factorial(int a)
+{long long r = 1;
+    for (int i = 1; i <= a; i++)
+	{ r = r * i;
+	}
+    return r;
+}
+int _tmain(int argc, _TCHAR* argv[])
+{system("chcp 1251");
+int n,c;
+long long y;
+cout << "Введите число(уменьшаемое) n = ";
+cin>>n;
+cout << "Введите число(вычитаемое) c = ";
+cin>>c;
+    if (n < 0 || c < 0) {
+        cout << "Ошибка: Факториал нельзя считать для отрицательных чисел!" << endl;
+        system("pause");
+        return 1;
+    }
+
+    if (n > 20 || c > 20) {
+        cout << "Ошибка: Числа слишком большие! Максимальное допустимое число — 20." << endl;
+        system("pause");
+        return 1;
+	}
+    y = Factorial(n) - Factorial(c);
+
+	cout << "Результат(разность) y = " << y << endl;
+
+    system("pause");
+    return 0;
+}

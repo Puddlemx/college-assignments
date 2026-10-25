@@ -1,0 +1,21 @@
+#include <iostream>
+#include <tchar.h>
+       int _tmain(int argc, _TCHAR* argv[])
+ {
+    long long n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    int even = 0, odd = 0;
+    do {
+        int d = n % 10;
+        if (d % 2 == 0) even++;
+        else odd++;
+        n /= 10;
+    } while (n > 0);
+	cout << "Четных цифр: " << even << "\nНечетных цифр: " << odd << endl;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+
+}

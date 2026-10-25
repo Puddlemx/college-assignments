@@ -1,0 +1,25 @@
+#include <iostream>
+#include <tchar.h>
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{system("chcp 1251");
+int a, b, i, umn;
+cout << "¬ведите натуральное число a: ";
+cin >> a;
+cout << "¬ведите натуральное число b: ";
+cin >> b;
+umn=0;
+     if (a <= 0 | b <= 0) {
+		cout << "ќшибка: числа должны быть натуральными (больше 0)." << endl;
+        system ("pause");
+		return 1;
+	}
+ i = 0;
+     do {
+		umn += a;
+		i++;
+	} while (i < b);
+cout << "–езультат " << a << " * " << b << " = " << umn << endl;
+  system ("pause");
+	return 0;
+}

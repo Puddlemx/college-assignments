@@ -1,0 +1,21 @@
+#include <iostream>
+#include <tchar.h>
+using namespace std;
+	int _tmain(int argc, _TCHAR* argv[])
+ {system ("chcp 1251");
+ int n,d,e,o ;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    e = 0;
+    o = 0;
+    do {
+        d = n % 10;
+        if (d % 2 == 0) e++;
+        else o++;
+        n /= 10;
+    } while (n > 0);
+	cout << "Сумма четных цифр: " << e << endl;
+    cout << "Произведение цифр: " << o << endl;
+    system("pause");
+    return 0;
+}

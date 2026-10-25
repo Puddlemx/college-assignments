@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>>
+ int main()
+{using namespace std;
+ system ("chcp 1251");
+    int choice;
+    double argument, result;
+
+	cout << "Выберите тригонометрическую функцию:\n";
+    cout << "1. Синус (sin)\n";
+    cout << "2. Косинус (cos)\n";
+    cout << "3. Тангенс (tan)\n";
+    cout << "4. Котангенс (ctg)\n";
+    cout << "Введите номер функции (1-4): ";
+    cin >> choice;
+
+    if (choice < 1 || choice > 4) {
+        cout << "Ошибка: неверный номер функции!" << endl;
+        system("pause");
+        return 1;
+    }
+
+    cout << "Введите аргумент (в радианах): ";
+	cin >> argument;
+    double degrees = argument * (180.0 / M_PI);
+
+    cout << "\nРезультат\n";
+
+    switch (choice) {
+        case 1:
+            result = sin(argument);
+            cout << "Функция: Синус (sin)" << endl;
+            cout << "В радианах: sin(" << argument << ") = " << result << endl;
+            cout << "В градусах: sin(" << degrees << "°) = " << result << endl;
+            break;
+        case 2:
+            result = cos(argument);
+            cout << "Функция: Косинус (cos)" << endl;
+            cout << "В радианах: cos(" << argument << ") = " << result << endl;
+            cout << "В градусах: cos(" << degrees << "°) = " << result << endl;
+            break;
+        case 3:
+            result = tan(argument);
+            cout << "Функция: Тангенс (tan)" << endl;
+            cout << "В радианах: tan(" << argument << ") = " << result << endl;
+            cout << "В градусах: tan(" << degrees << "°) = " << result << endl;
+            break;
+        case 4:
+            if (sin(argument) == 0) {
+                cout << "Ошибка: котангенс не существует для этого аргумента!" << endl;
+            } else {
+                result = 1.0 / tan(argument);
+                cout << "Функция: Котангенс (ctg)" << endl;
+                cout << "В радианах: ctg(" << argument << ") = " << result << endl;
+                cout << "В градусах: ctg(" << degrees << "°) = " << result << endl;
+            }
+			break;
+	}
+
+	system("pause");
+	return 0;
+}
